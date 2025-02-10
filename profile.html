@@ -127,26 +127,6 @@
       </style>
     </head>
     <body class="body1">
-        <script>
-            // 눈송이 추가 함수
-            function createSnowflake() {
-                let snowflake = document.createElement("div");
-                snowflake.classList.add("snowflake");
-                
-                // 화면의 랜덤 위치에 눈송이 위치시키기
-                snowflake.style.left = Math.random() * 100 + "vw";
-                
-                document.body.appendChild(snowflake);
-                
-                // 눈송이가 화면을 벗어나면 제거하기
-                setTimeout(() => {
-                    snowflake.remove();
-                }, 10000); // 10초 후 제거
-            }
-    
-            // 일정 간격으로 눈송이 생성
-            setInterval(createSnowflake, 100);
-        </script>
         <!-- 배경음악 -->
         <iframe src="media/Gymnopedie_No1.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
         <div id="container">
@@ -237,3 +217,23 @@
         </div>        
     </body>
     </html>
+    <script>
+        // 눈송이 추가 함수
+        function createSnowflake() {
+            let snowflake = document.createElement("div");
+            snowflake.classList.add("snowflake");
+            
+            // 화면의 랜덤 위치에 눈송이 위치시키기
+            snowflake.style.left = Math.random() * 100 + "vw";
+            
+            document.body.appendChild(snowflake);
+            
+            // 눈송이가 화면을 벗어나면 제거하기
+            setTimeout(() => {
+                snowflake.remove();
+            }, 10000); // 10초 후 제거
+        }
+
+        // 일정 간격으로 눈송이 생성
+        setInterval(createSnowflake, 100);
+    </script>
