@@ -6,11 +6,10 @@
     <title>너 내 동료가 돼라</title>
     <style>
         /* 폰트 적용 */
-        /* @font-face{
-            font-family:'CuteFont-Regular'; 글꼴
-            src: local('CuteFont-Regular'),
-                url('media/CuteFont-Regular.ttf') format('truetype');
-	    } */
+        @font-face{
+            font-family:'NanumSquareR'; 
+            src: url('media/NanumSquareR.ttf') format('truetype');
+	    }
         body, html {
             margin: 0;
             padding: 0;
@@ -18,41 +17,8 @@
             background-color: #282c34;
             overflow: hidden;
         }
-
-        .snowflake {
-            position: absolute;
-            top: -10px;
-            background-color: white;
-            border-radius: 50%;
-            opacity: 0.8;
-            animation: fall linear infinite;
-        }
-
-        @keyframes fall {
-            0% {
-                transform: translateY(-10px);
-            }
-            100% {
-                transform: translateY(100vh);
-            }
-        }
-
-        /* 다양한 크기와 속도로 눈송이가 떨어지도록 설정 */
-        .snowflake:nth-child(odd) {
-            animation-duration: 7s;
-            animation-delay: -2s;
-            width: 5px;
-            height: 5px;
-        }
-
-        .snowflake:nth-child(even) {
-            animation-duration: 10s;
-            animation-delay: -4s;
-            width: 8px;
-            height: 8px;
-        }
         .body1 {
-            background-image: url(media/snow1.jpg);
+            transition: background-image 0.5s ease-in-out;
             background-size: cover;
             font-family: 'CuteFont-Regular';
         }
@@ -71,14 +37,13 @@
         }       
         #sidebar {
             width: 250px;
-            height: 800px;
-            padding-top: 20px;
+            height: 790px;
             background-color: rgb(255, 255, 255, 0);            
             float: left;
         }
         #contents {
             width: 650px;
-            height: 800px;
+            height: 790px;
             background-color: rgb(255, 255, 255, 0); 
             float: left;
         }
@@ -88,7 +53,13 @@
             height: 50px;
             background-color: rgb(255, 255, 255, 0); 
             clear: both;
-        }       
+        }  
+        #time{
+            font-size: 30px;
+            color: #5a7c9f;
+            font-weight: bold;
+            text-align: left;
+        }
         table {
           width:70%; 
           border:1px solid #222; 
@@ -107,7 +78,7 @@
         } 
         .s_box {
             width: 200px;                        
-            margin: 1px auto;            
+            margin: 20px auto;            
             text-align: left;
         }
         .c_box {
@@ -116,33 +87,37 @@
             background-color: rgb(255, 255, 255, 0);           
             margin-left: 50px;
         }  
-        .c_box1 {height: 130px;}
-        .c_box2 {height: 230px;}
+        .c_box1 {height: 120px;}
+        .c_box2 {height: 220px;}
         .c_box3 {height: 120px;}
-        .c_box4 {height: 180px;}
+        .c_box4 {height: 190px;}
         .subtitle {
             color: black;
             font-size: 30px;
         }
       </style>
     </head>
-    <body class="body1">
+    <body class="body1" style="background-image: url(media/snow1.jpg);">
         <!-- 배경음악 -->
         <iframe src="media/Gymnopedie_No1.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
         <div id="container">
             <!-- 머릿글 -->
             <div id="head">
-                <h2>우리 모두 열심히 공부합시다(음악 듣고 가세요)</h2>
+                <h2>JAVA 튜토리얼 끝남</h2>
             </div>
             <!-- 사이드바 -->
             <div id="sidebar">
                 <div class="s_box">
-                    <img src="media/fire.gif" width="200px">
+                    <img src="media/cat1.gif" width="200px">
                     <h1>Ryu seungho</h1>    
-                    <p>자바가 어려운 이유는 내가 복습을 게을리 했기 때문이다</p>
-                    <div>
-                        <h2>SNS</h2>
-                        <h3><a href="#">클릭!</a></h3>
+                    <p>열심히 공부하자!  타자치는 저 고양이 처럼</p>
+                    <br>
+                    <div id="time"></div>
+                    <br>
+                    <div id="img" onclick="imgChange()">
+                        <label>
+                            <a href="javascript:;"><h3>배경 바꾸기</h3></a>
+                        </label>
                     </div>
                 </div> 
             </div>
@@ -158,14 +133,14 @@
                         <li>프론트엔드
                             <ul>
                                 <li>HTML/CSS/JAVASCRIPT </li>
-                                <li>웹 페이지 잘 만든다 </li>
+                                <li>이미지 돌리기 할 수 있음 </li>
                                 <li>다 잘함</li> 
                             </ul>
                         </li>
                         <li>백엔드
                             <ul>
-                                <li>자바 잘함 </li>
-                                <li>오라클 더 잘함</li>
+                                <li>자바로 랜덤 구구단 만들 수 있음 </li>
+                                <li>오라클에서 평균 키 구할 수 있음</li>
                             </ul>                        
                         </li>
                     </ul>             
@@ -195,13 +170,13 @@
                       </thead>
                       <tbody>
                           <tr>
-                              <td>좋은대학교</td>
-                              <td>좋은학과</td>
+                              <td>JAVA 대학교</td>
+                              <td>ORACLE 학과</td>
                               <td>2010.3 ~ 2013.2</td>
                               <td>졸업</td>
                           </tr>
                           <tr>
-                              <td>꽤좋은고등학교</td>
+                              <td>HTML 고등학교</td>
                               <td> - </td>
                               <td>2007.3 ~ 2009.2</td>
                               <td>졸업</td>
@@ -218,22 +193,22 @@
     </body>
     </html>
     <script>
-        // 눈송이 추가 함수
-        function createSnowflake() {
-            let snowflake = document.createElement("div");
-            snowflake.classList.add("snowflake");
-            
-            // 화면의 랜덤 위치에 눈송이 위치시키기
-            snowflake.style.left = Math.random() * 100 + "vw";
-            
-            document.body.appendChild(snowflake);
-            
-            // 눈송이가 화면을 벗어나면 제거하기
-            setTimeout(() => {
-                snowflake.remove();
-            }, 10000); // 10초 후 제거
-        }
+        let imgIndex = 1;
 
-        // 일정 간격으로 눈송이 생성
-        setInterval(createSnowflake, 100);
+        function imgChange() {
+            const body = document.body;
+            if (imgIndex === 1) {
+                body.style.backgroundImage = "url('media/snow3.jpg')";
+                imgIndex = 2;
+            } else {
+                body.style.backgroundImage = "url('media/snow1.jpg')";
+                imgIndex = 1;
+            }
+        }
+        setInterval(()=>{
+            let datetime = new Date();
+            let getTime = datetime.getHours() + " : " + datetime.getMinutes() + " : " + datetime.getSeconds();
+            let obj = document.querySelector("#time");
+            obj.innerHTML = getTime;
+        }, 1000)
     </script>
