@@ -198,13 +198,16 @@
         function imgChange() {
             const body = document.body;
             if (imgIndex === 1) {
-                body.style.backgroundImage = "url('media/snow3.jpg')";
+                body.style.backgroundImage = "url('media/snow2.jpg')";
                 imgIndex = 2;
-            } else {
+            } else if (imgIndex === 2) {
+                body.style.backgroundImage = "url('media/snow3.jpg')";
+                imgIndex = 3;
+            } else if (imgIndex === 3) {
                 body.style.backgroundImage = "url('media/snow1.jpg')";
                 imgIndex = 1;
             }
-        }
+        }    
         setInterval(()=>{
             let datetime = new Date();
             let getTime = datetime.getHours() + " : " + datetime.getMinutes() + " : " + datetime.getSeconds();
