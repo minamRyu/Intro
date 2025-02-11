@@ -18,7 +18,7 @@
             overflow: hidden;
         }
         .body1 {
-            /* transition: background-image 2s ease-in-out; */
+            transition: background-image 2s ease-in-out;
             background-size: cover;
             font-family: 'Nanum';
         }
@@ -103,13 +103,13 @@
         <div id="container">
             <!-- 머릿글 -->
             <div id="head">
-                <h2>JAVA 튜토리얼 끝남</h2>
+                <h2>JAVA는 너무 잼있어~</h2>
             </div>
             <!-- 사이드바 -->
             <div id="sidebar">
                 <div class="s_box">
                     <img src="media/cat1.gif" width="200px">
-                    <h1>Ryu seungho</h1>    
+                    <h2>Ryu seungho</h2>    
                     <p>열심히 공부하자!  타자치는 저 고양이 처럼</p>
                     <br>
                     <div id="time"></div>
@@ -187,6 +187,7 @@
             </div>  
             <div id="contact">
                 <div>Addr : Incheon, Korea</div>
+                <div>Mobile : +82 10 1234 5678</div>
                 <div>E-Mail : javamaster@naver.com</div>
             </div>      
         </div>        
@@ -199,13 +200,13 @@
             const body = document.body;
             if (imgIndex === 1) {
                 body.style.backgroundImage = "url('media/snow2.jpg')";
-                imgIndex = 2;
+                 imgIndex = 2;
             } else if (imgIndex === 2) {
                 body.style.backgroundImage = "url('media/snow3.jpg')";
-                imgIndex = 3;
+                 imgIndex = 3;
             } else if (imgIndex === 3) {
                 body.style.backgroundImage = "url('media/snow1.jpg')";
-                imgIndex = 1;
+                 imgIndex = 1;
             }
         }    
         setInterval(()=>{
