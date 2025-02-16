@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>너 내 동료가 돼라</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>아직은 비기너 입니다</title>
     <style>
         /* 폰트 적용 */
         @font-face{
@@ -16,41 +17,59 @@
             height: 100%;
             background-color: #282c34;
             overflow: hidden;
+            color: #eee;
         }
         .body1 {
             background-size: cover;
             font-family: 'Nanum';
+            background-image: url(media/dark_java.jpg);
         }
-        #head {
-            width: 870px;            
-            margin: 10px auto;
-            height: 70px;
-            background-color: rgb(255, 255, 255, 0); 
-            padding-top: 10px;
-            padding-left: 30px;
-            border-bottom: 1px solid black;
-        } 
         #container {
-            width: 900px;            
-            margin: 10px auto;        
-        }       
+            width: 1800px;   
+            height: 950px;         
+            margin: 1px auto;   
+        }    
+        #head {
+            height: 70px;
+            display: flex;
+            animation: moveHead 50s linear infinite;
+        }
+        /* 헤드부분 배너 이미지 이동 */
+        @keyframes moveHead {
+            0% {
+                transform: translateX(100%); /* 처음 위치 */
+            }
+            100% {
+                transform: translateX(-100%); /* 끝 위치 */
+            }
+        }
         #sidebar {
             width: 250px;
-            height: 790px;
+            height: 800px;
+            margin-left: 200px;
             background-color: rgb(255, 255, 255, 0);            
             float: left;
         }
         #contents {
-            width: 650px;
-            height: 790px;
+            width: 500px;
+            height: 800px;
             background-color: rgb(255, 255, 255, 0); 
             float: left;
         }
+        #detail {
+            width: 500px;
+            height: 800px;
+            background-color: rgb(255, 255, 255, 0);
+            margin-left: 20px;  
+            text-align: left;         
+            float: left;
+        }
         #contact {
-            text-align: right;
+            text-align: left;
             width: 900px; 
-            height: 50px;
+            height: 70px;
             background-color: rgb(255, 255, 255, 0); 
+            margin-left: 200px;
             clear: both;
         }  
         #time{
@@ -75,143 +94,331 @@
         .img {           
             text-align: center;
         } 
+        /* 사이드 바 내부 박스 */
         .s_box {
             width: 200px;                        
-            margin: 20px auto;            
+            margin: 30px auto;            
             text-align: left;
         }
+        .s_box1 {float: left;}
+        .s_box2 {float: left;}
+        .s_box3 {float: left;}
+        /* 사이드 바 안쪽 박스 sns 아이콘 */
+        div a img {
+            width: 60px; 
+        }
+        div a img:hover {
+            transform: scale(2);
+            cursor: pointer;
+        }
+        /* 컨텐츠 박스 내부 박스 */
         .c_box {
-            border-bottom: 1px dotted black;
-            width: 550px;            
+            border-bottom: 1px dotted rgb(194, 155, 155);
+            width: 450px;            
             background-color: rgb(255, 255, 255, 0);           
             margin-left: 50px;
+            cursor: pointer;
         }  
-        .c_box1 {height: 120px;}
-        .c_box2 {height: 220px;}
-        .c_box3 {height: 120px;}
-        .c_box4 {height: 190px;}
+        .c_box1 {height: 100px;}
+        .c_box2 {height: 200px;}
+        .c_box3 {height: 100px;}
+        .c_box4 {height: 220px;}
+        /* 디테일 박스 내부 박스 */
+        .d_box {
+            width: 480px;
+            margin: 30px auto;
+            border: 1px dotted rgb(194, 155, 155); 
+            border-radius: 2%;
+            cursor: pointer;
+        }
         .subtitle {
-            color: black;
+            color: #eee;
             font-size: 30px;
+        }
+        .easterEgg {
+            width: 50px;
+            height: 50px;
+            position: fixed;
+            top: 580px;
+            left: 1650px;
         }
       </style>
     </head>
-    <body class="body1" style="background-image: url(media/snow1.jpg);">
+    <body class="body1">
         <!-- 배경음악 -->
-        <iframe src="media/Gymnopedie_No1.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
+        <iframe src="media/GunsNRoses - Welcome to the Jungle - utoranking.com.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
+        <!-- 헤드부분 배너 이미지 -->
+        <div id="head">
+            <img src="media/eat-sleep-code-repeat.jpg">
+            <img src="media/eat-sleep-code-repeat.jpg">
+            <img src="media/eat-sleep-code-repeat.jpg">
+            <img src="media/eat-sleep-code-repeat.jpg">
+            <img src="media/eat-sleep-code-repeat.jpg">
+            <img src="media/eat-sleep-code-repeat.jpg">
+            <img src="media/eat-sleep-code-repeat.jpg">
+            <img src="media/eat-sleep-code-repeat.jpg">
+            <img src="media/eat-sleep-code-repeat.jpg">
+            <img src="media/eat-sleep-code-repeat.jpg">
+        </div>
         <div id="container">
-            <!-- 머릿글 -->
-            <div id="head">
-                <h2>JAVA는 너무 잼있어~</h2>
-            </div>
             <!-- 사이드바 -->
             <div id="sidebar">
-                <div class="s_box">
-                    <img src="media/cat1.gif" width="200px">
-                    <h2>Ryu seungho</h2>    
-                    <p>열심히 공부하자!  타자치는 저 고양이 처럼</p>
-                    <br>
+                <div class="s_box s_box1">
+                    <img src="media/life.jpg" width="200px">
+                    <h3>Ryu seungho</h3>    
+                    <p>먹고, 자고, 코딩만 합니다!</p>
+                </div>    
+                <div class="s_box s_box2">
+                        <a href="https://github.com/ljs1990-tj/html_ex1"><img src="media/git_icon1.png" id="git"></a>
+                        <a onclick="alert('없는 계정입니다')"><img src="media/insta_icon1.png" id="insta"></a>
+                        <a onclick="alert('짹짹짹!')"><img src="media/tweet_icon1.png" id="tweet"></a>
+                </div>
+                <!-- 현재 시간 -->
+                <div class="s_box s_box3">
                     <div id="time"></div>
-                    <br>
-                    <div id="img" onclick="imgChange()">
-                        <label>
-                            <a href="javascript:;"><h3>배경 바꾸기</h3></a>
-                        </label>
-                    </div>
-                </div> 
+                </div>
             </div>
+            <!-- 내용과 상세 내용은 vue 안에서 작성 -->
+            <div id="app">
+                <!-- 내용 -->
             <div id="contents">
-                <section class="c_box c_box1">
-                    <h2 class="subtitle">자기소개</h2>
-                    <p><mark>프로그래밍</mark>에 관심이 많습니다. <br>현재 열심히 공부하며 코딩 중!</p>
+                <section class="c_box c_box1" @click="fnBox1Flg()">
+                    <h3 class="subtitle">자기소개</h3>
                 </section>
                 <!-- 경력 -->
-                <section class="c_box c_box2">
-                    <h2 class="subtitle">Experience</h2>
-                    <ul>
-                        <li>프론트엔드
-                            <ul>
-                                <li>HTML/CSS/JAVASCRIPT </li>
-                                <li>이미지 돌리기 할 수 있음 </li>
-                                <li>다 잘함</li> 
-                            </ul>
-                        </li>
-                        <li>백엔드
-                            <ul>
-                                <li>자바로 랜덤 구구단 만들 수 있음 </li>
-                                <li>오라클에서 평균 키 구할 수 있음</li>
-                            </ul>                        
-                        </li>
-                    </ul>             
+                <section class="c_box c_box2" @click="fnBox2Flg()">
+                    <h3 class="subtitle">Experience</h3>
+                    <pre style="font-size: 15px;">
+    public class ExperienceMain {
+
+        Experience e = new Experience(
+            "frontEnd", "backEnd");
+        System.out.println(e);
+	}                
+                    </pre>
                 </section>
                 <!-- 숙련도 -->
-                <section class="c_box c_box3">
-                    <h2 class="subtitle">보유 기술</h2>
-                    <li style="list-style: none;"> 
-                        <ul>
-                            <li>자바 </li>
-                            <li>오라클</li>
-                        </ul>                        
-                    </li>
+                <section class="c_box c_box3" @click="fnBox3Flg()">
+                    <h3 class="subtitle">보유 기술</h3>
                 </section>
                 <!-- 학력 -->
-                <section class="c_box c_box4">
-                    <h2 class="subtitle">Education</h2>
-                    <table>
-                      <caption>학력 사항</caption>
-                      <thead>
-                          <tr>
-                              <th>출신학교</th>
-                              <th>전공</th>
-                              <th>기간</th>
-                              <th>구분</th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <tr>
-                              <td>JAVA 대학교</td>
-                              <td>ORACLE 학과</td>
-                              <td>2010.3 ~ 2013.2</td>
-                              <td>졸업</td>
-                          </tr>
-                          <tr>
-                              <td>HTML 고등학교</td>
-                              <td> - </td>
-                              <td>2007.3 ~ 2009.2</td>
-                              <td>졸업</td>
-                          </tr>
-                      </tbody>
-                    </table>
+                <section class="c_box c_box4" @click="fnBox4Flg()">
+                    <h3 class="subtitle">Education</h3>
+                    <pre style="font-size: 15px;">
+    public class EduMain {
+
+        Edu e = new Edu("Java 대학교", 
+                "Oracle 학과", 2013);
+        System.out.println(e);
+	}
+                    </pre>
                 </section>
-            </div>  
+            </div>
+            <!-- 상세 설명 --> 
+            <div id="detail">
+                <!-- 기본 메뉴 내용 -->
+                <div class="d_box" v-if="!box1Flg && !box2Flg && !box3Flg && !box4Flg">
+                    <pre style="font-size: 15px;">
+
+    public class Menu {
+
+        System.out.println("자기소개");
+        System.out.println("Experience");
+        System.out.println("보유 기술");
+        System.out.println("Education");
+        // 토끼가 달걀을 숨김!!
+    }    
+                    </pre>
+                </div>
+                <!-- 자기소개 내용 -->
+                <div class="d_box" v-if="box1Flg" @click="box1Flg = !box1Flg">
+                    <pre style="font-size: 15px;">
+
+    public class Introduction {
+
+        String favorite;
+        while(true) {			
+            if(favorite.equals(Java)) {
+                System.out.println(
+                    "자바는 재미있다!"
+                );
+            } else if(favorite.equals(Oracle)) {
+                System.out.println(
+                    "오라클도 재미있다!"
+                );
+            } else if(favorite.equals(HTML)) {
+                System.out.println(
+                    "HTML은 더욱 재미있다!"
+                );
+            } 
+        }
+    }    
+                    </pre>
+                </div>
+                <!-- 경력사항 내용 -->
+                <div class="d_box" v-if="box2Flg" @click="box2Flg = !box2Flg">
+                    <pre style="font-size: 15px;">
+
+    public class Experience {
+
+        private String front;
+        private String back;
+                            
+        Experience(String front, String back){
+            this.front = front;
+            this.back = back;
+        }
+                        
+        @Override
+        public String toString() {
+            return front + ":\n" + 
+                    " 웹 페이지 잘 만든다. 다 잘함."
+                    + "\n" + back + ":\n" +
+                    " 자바 잘함. 오라클 더 잘함."; 
+        }
+    }  
+                    </pre>
+                </div>
+                <!-- 보유기술 내용 -->
+                <div class="d_box" v-if="box3Flg" @click="box3Flg = !box3Flg">
+                    <pre style="font-size: 15px;">
+
+    public class Skill {
+
+        int eduMonth;
+        for(int i=1; i&lt;eduMonth.length; i++) {
+            if(i==1) {
+                System.out.println("자바 교육받음");
+            }
+            if(i==2) {
+                System.out.println("오라클 교육받음");
+			}
+            if(i==3) {
+                System.out.println("HTML 교육받음");
+            }
+        }    
+    }    
+                    </pre>
+                </div>
+                <!-- 학력사항 내용 -->
+                <div class="d_box" v-if="box4Flg" @click="box4Flg = !box4Flg">
+                    <pre style="font-size: 15px;">
+    public class Edu {
+
+        private String university;
+        private String major;
+        private int graduation;
+                            
+        Edu(String university, String major, 
+                int graduation){
+            this.university = university;
+            this.major = major;
+            this.graduation = graduation;
+        }
+                        
+        @Override
+        public String toString() {
+            return university + " " + major 
+                    + "를 " + graduation
+                    + "년도에 졸업하였습니다."; 
+        }
+    }
+                    </pre>
+                </div>
+                <div class="easterEgg" @click="fnEasterEgg"></div> 
+            </div>
+            <!-- 연락처 -->
             <div id="contact">
                 <div>Addr : Incheon, Korea</div>
                 <div>Mobile : +82 10 1234 5678</div>
                 <div>E-Mail : javamaster@naver.com</div>
             </div>      
-        </div>        
+        </div>    
     </body>
     </html>
     <script>
-        let imgIndex = 1;
-
-        function imgChange() {
-            const body = document.body;
-            if (imgIndex === 1) {
-                body.style.backgroundImage = "url('media/snow2.jpg')";
-                imgIndex = 2;
-            } else if (imgIndex === 2) {
-                body.style.backgroundImage = "url('media/snow3.jpg')";
-                 imgIndex = 3;
-            } else if (imgIndex === 3) {
-                body.style.backgroundImage = "url('media/snow1.jpg')";
-                 imgIndex = 1;
-            }
-        }    
+        //  아이콘 이미지 변경
+        let img1 = document.querySelector("#git");
+            img1.addEventListener("mouseover", ()=>{
+                img1.src = "media/git_icon2.png";
+            });
+            img1.addEventListener("mouseout", ()=>{
+                img1.src = "media/git_icon1.png";
+            });
+        let img2 = document.querySelector("#insta");
+            img2.addEventListener("mouseover", ()=>{
+                img2.src = "media/insta_icon2.png";
+            });
+            img2.addEventListener("mouseout", ()=>{
+                img2.src = "media/insta_icon1.png";
+            });    
+        let img3 = document.querySelector("#tweet");
+            img3.addEventListener("mouseover", ()=>{
+                img3.src = "media/tweet_icon2.png";
+            });
+            img3.addEventListener("mouseout", ()=>{
+                img3.src = "media/tweet_icon1.png";
+            });
+        // 현재시간
         setInterval(()=>{
             let datetime = new Date();
             let getTime = datetime.getHours() + " : " + datetime.getMinutes() + " : " + datetime.getSeconds();
             let obj = document.querySelector("#time");
             obj.innerHTML = getTime;
         }, 1000)
+        // vue.js 부분
+        const app = Vue.createApp({
+        data() {
+            return {
+                // 변수
+                box1Flg : false,
+                box2Flg : false,
+                box3Flg : false,
+                box4Flg : false
+            };
+                },
+                methods: {
+                    // 함수(메소드)
+                    // 상세내용 flag function
+                    fnBox1Flg : function(){
+                        let self = this;
+                        self.box1Flg = true;
+                        self.box2Flg = false;
+                        self.box3Flg = false;
+                        self.box4Flg = false;
+                    },
+                    fnBox2Flg : function(){
+                        let self = this;
+                        self.box2Flg = true;
+                        self.box1Flg = false;
+                        self.box3Flg = false;
+                        self.box4Flg = false;
+                    },
+                    fnBox3Flg : function(){
+                        let self = this;
+                        self.box3Flg = true;
+                        self.box1Flg = false;
+                        self.box2Flg = false;
+                        self.box4Flg = false;
+                    },
+                    fnBox4Flg : function(){
+                        let self = this;
+                        self.box4Flg = true;
+                        self.box1Flg = false;
+                        self.box2Flg = false;
+                        self.box3Flg = false;
+                    },
+                    // 이스터 에그
+                    fnEasterEgg : function(){
+                        if(confirm("달걀을 찾았습니다!!")){
+                            location.href = "https://dhlottery.co.kr/common.do?method=main";
+                        }
+                    }
+                },
+                mounted() {
+                    // 처음 시작할 때 실행되는 부분
+                }
+            });
+
+            app.mount('#app');
     </script>
