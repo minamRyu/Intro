@@ -17,12 +17,16 @@
             height: 100%;
             background-color: #282c34;
             overflow: hidden;
-            color: #eee;
-        }
-        .body1 {
             background-size: cover;
             font-family: 'Nanum';
+        }
+        .dark-java {
+            color: #eee;
             background-image: url(media/dark_java.jpg);
+        }
+        .light-java {
+            color: #402344;
+            background-image: url(media/light_java.jpg);
         }
         #container {
             width: 1800px;   
@@ -84,12 +88,15 @@
         /* 사이드 바 내부 박스 */
         .s_box {
             width: 200px;                        
-            margin: 30px auto;            
-            text-align: left;
+            margin: 30px auto; 
         }
         .s_box1 {float: left;}
         .s_box2 {float: left;}
-        .s_box3 {float: left;}
+        .s_box3 {
+            float: left;
+            padding-left: 40px;
+        }
+        .s_box4 {float: left;}
         /* 사이드 바 안쪽 박스 sns 아이콘 */
         div a img {
             width: 60px; 
@@ -112,15 +119,11 @@
         .c_box4 {height: 220px;}
         /* 디테일 박스 내부 박스 */
         .d_box {
-            width: 480px;
+            width: 520px;
             margin: 30px auto;
             border: 2px dotted rgb(194, 155, 155); 
             border-radius: 15px;
             cursor: pointer;
-        }
-        .subtitle {
-            color: #eee;
-            font-size: 30px;
         }
         .easterEgg {
             width: 50px;
@@ -129,53 +132,59 @@
             top: 580px;
             left: 1650px;
         }
-      </style>
-    </head>
-    <body class="body1">
-        <!-- 배경음악 -->
-        <iframe src="media/GunsNRoses - Welcome to the Jungle - utoranking.com.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
-        <!-- 헤드부분 배너 이미지 -->
-        <div id="head">
-            <img src="media/eat-sleep-code-repeat.jpg">
-            <img src="media/eat-sleep-code-repeat.jpg">
-            <img src="media/eat-sleep-code-repeat.jpg">
-            <img src="media/eat-sleep-code-repeat.jpg">
-            <img src="media/eat-sleep-code-repeat.jpg">
-            <img src="media/eat-sleep-code-repeat.jpg">
-            <img src="media/eat-sleep-code-repeat.jpg">
-            <img src="media/eat-sleep-code-repeat.jpg">
-            <img src="media/eat-sleep-code-repeat.jpg">
-            <img src="media/eat-sleep-code-repeat.jpg">
-        </div>
-        <div id="container">
-            <!-- 사이드바 -->
-            <div id="sidebar">
-                <div class="s_box s_box1">
-                    <img src="media/life.jpg" width="200px">
-                    <h3>Ryu seungho</h3>    
-                    <p>먹고, 자고, 코딩만 합니다!</p>
-                </div>    
-                <div class="s_box s_box2">
-                        <a href="https://github.com/ljs1990-tj/html_ex1"><img src="media/git_icon1.png" id="git"></a>
-                        <a onclick="alert('없는 계정입니다')"><img src="media/insta_icon1.png" id="insta"></a>
-                        <a onclick="alert('짹짹짹!')"><img src="media/tweet_icon1.png" id="tweet"></a>
-                </div>
-                <!-- 현재 시간 -->
-                <div class="s_box s_box3">
-                    <div id="time"></div>
-                </div>
+        pre {
+            font-size: 17px;
+        }
+    </style>
+</head>
+<body class="dark-java">
+    <!-- 배경음악 -->
+    <iframe src="media/GunsNRoses - Welcome to the Jungle - utoranking.com.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
+    <!-- 헤드부분 배너 이미지 -->
+    <div id="head">
+        <img src="media/eat-sleep-code-repeat.jpg">
+        <img src="media/eat-sleep-code-repeat.jpg">
+        <img src="media/eat-sleep-code-repeat.jpg">
+        <img src="media/eat-sleep-code-repeat.jpg">
+        <img src="media/eat-sleep-code-repeat.jpg">
+        <img src="media/eat-sleep-code-repeat.jpg">
+        <img src="media/eat-sleep-code-repeat.jpg">
+        <img src="media/eat-sleep-code-repeat.jpg">
+        <img src="media/eat-sleep-code-repeat.jpg">
+        <img src="media/eat-sleep-code-repeat.jpg">
+    </div>
+    <div id="container">
+        <!-- 사이드바 -->
+        <div id="sidebar">
+            <div class="s_box s_box1">
+                <img src="media/life.jpg" width="200px">
+                <h3>Ryu seungho</h3>    
+                <p>먹고, 자고, 코딩만 합니다!</p>
+            </div>    
+            <div class="s_box s_box2">
+                <a href="https://github.com/ljs1990-tj/html_ex1"><img src="media/git_icon1.png" id="git"></a>
+                <a href="https://www.instagram.com/accounts/login/?source=logged_out_sem"><img src="media/insta_icon1.png" id="insta"></a>
+                <a href="https://x.com/?lang=ko&mx=2"><img src="media/tweet_icon1.png" id="tweet"></a>
             </div>
-            <!-- 내용과 상세 내용은 vue 안에서 작성 -->
-            <div id="app">
-                <!-- 내용 -->
+            <div class="s_box s_box3">
+                <a onclick="fnMode()"><img src="media/java3.png" style="width: 100px;" id="java"></a>
+            </div>
+            <!-- 현재 시간 -->
+            <div class="s_box s_box4">
+                <div id="time"></div>
+            </div>
+        </div>
+        <!-- 내용과 상세 내용은 vue 안에서 작성 -->
+        <div id="app">
+            <!-- 내용 -->
             <div id="contents">
                 <section class="c_box c_box1" @click="fnBox1Flg()">
-                    <h3 class="subtitle">자기소개</h3>
+                    <h1>자기소개</h1>
                 </section>
                 <!-- 경력 -->
                 <section class="c_box c_box2" @click="fnBox2Flg()">
-                    <h3 class="subtitle">Experience</h3>
-                    <pre style="font-size: 15px;">
+                    <h1>Experience</h1>
+                    <pre>
     public class ExperienceMain {
 
         Experience e = new Experience(
@@ -186,12 +195,12 @@
                 </section>
                 <!-- 숙련도 -->
                 <section class="c_box c_box3" @click="fnBox3Flg()">
-                    <h3 class="subtitle">보유 기술</h3>
+                    <h1>보유 기술</h1>
                 </section>
                 <!-- 학력 -->
                 <section class="c_box c_box4" @click="fnBox4Flg()">
-                    <h3 class="subtitle">Education</h3>
-                    <pre style="font-size: 15px;">
+                    <h1>Education</h1>
+                    <pre>
     public class EduMain {
 
         Edu e = new Edu("Java 대학교", 
@@ -205,7 +214,7 @@
             <div id="detail">
                 <!-- 기본 메뉴 내용 -->
                 <div class="d_box" v-if="!box1Flg && !box2Flg && !box3Flg && !box4Flg">
-                    <pre style="font-size: 15px;">
+                    <pre>
 
     public class Menu {
 
@@ -219,7 +228,7 @@
                 </div>
                 <!-- 자기소개 내용 -->
                 <div class="d_box" v-if="box1Flg" @click="box1Flg = !box1Flg">
-                    <pre style="font-size: 15px;">
+                    <pre>
 
     public class Introduction {
 
@@ -245,7 +254,7 @@
                 </div>
                 <!-- 경력사항 내용 -->
                 <div class="d_box" v-if="box2Flg" @click="box2Flg = !box2Flg">
-                    <pre style="font-size: 15px;">
+                    <pre>
 
     public class Experience {
 
@@ -269,7 +278,7 @@
                 </div>
                 <!-- 보유기술 내용 -->
                 <div class="d_box" v-if="box3Flg" @click="box3Flg = !box3Flg">
-                    <pre style="font-size: 15px;">
+                    <pre>
 
     public class Skill {
 
@@ -291,7 +300,7 @@
                 </div>
                 <!-- 학력사항 내용 -->
                 <div class="d_box" v-if="box4Flg" @click="box4Flg = !box4Flg">
-                    <pre style="font-size: 15px;">
+                    <pre>
     public class Edu {
 
         private String university;
@@ -322,41 +331,57 @@
                 <div>Mobile : +82 10 1234 5678</div>
                 <div>E-Mail : javamaster@naver.com</div>
             </div>      
-        </div>    
-    </body>
-    </html>
-    <script>
-        //  아이콘 이미지 변경
-        let img1 = document.querySelector("#git");
-            img1.addEventListener("mouseover", ()=>{
-                img1.src = "media/git_icon2.png";
-            });
-            img1.addEventListener("mouseout", ()=>{
-                img1.src = "media/git_icon1.png";
-            });
-        let img2 = document.querySelector("#insta");
-            img2.addEventListener("mouseover", ()=>{
-                img2.src = "media/insta_icon2.png";
-            });
-            img2.addEventListener("mouseout", ()=>{
-                img2.src = "media/insta_icon1.png";
-            });    
-        let img3 = document.querySelector("#tweet");
-            img3.addEventListener("mouseover", ()=>{
-                img3.src = "media/tweet_icon2.png";
-            });
-            img3.addEventListener("mouseout", ()=>{
-                img3.src = "media/tweet_icon1.png";
-            });
-        // 현재시간
-        setInterval(()=>{
-            let datetime = new Date();
-            let getTime = datetime.getHours() + " : " + datetime.getMinutes() + " : " + datetime.getSeconds();
-            let obj = document.querySelector("#time");
-            obj.innerHTML = getTime;
-        }, 1000)
-        // vue.js 부분
-        const app = Vue.createApp({
+        </div> 
+    </div>       
+</body>
+</html>
+<script>
+    //  아이콘 이미지 변경
+    let img1 = document.querySelector("#git");
+        img1.addEventListener("mouseover", ()=>{
+            img1.src = "media/git_icon2.png";
+        });
+        img1.addEventListener("mouseout", ()=>{
+            img1.src = "media/git_icon1.png";
+        });
+    let img2 = document.querySelector("#insta");
+        img2.addEventListener("mouseover", ()=>{
+            img2.src = "media/insta_icon2.png";
+        });
+        img2.addEventListener("mouseout", ()=>{
+            img2.src = "media/insta_icon1.png";
+        });    
+    let img3 = document.querySelector("#tweet");
+        img3.addEventListener("mouseover", ()=>{
+            img3.src = "media/tweet_icon2.png";
+        });
+        img3.addEventListener("mouseout", ()=>{
+            img3.src = "media/tweet_icon1.png";
+        });
+
+    // 화면 모드 변경
+    function fnMode(){
+        let body = document.body;
+        body.classList.toggle('dark-java');
+        body.classList.toggle('light-java');  
+
+        var img = document.getElementById('java');
+        if (img.src.endsWith('media/java3.png')) {
+            img.src = 'media/java2.png';
+        } else {
+            img.src = 'media/java3.png';
+        }
+    }
+
+    // 현재시간
+    setInterval(()=>{
+        let datetime = new Date();
+        let getTime = datetime.getHours() + " : " + datetime.getMinutes() + " : " + datetime.getSeconds();
+        let obj = document.querySelector("#time");
+        obj.innerHTML = getTime;
+    }, 1000)
+    // vue.js 부분
+    const app = Vue.createApp({
         data() {
             return {
                 // 변수
@@ -365,49 +390,49 @@
                 box3Flg : false,
                 box4Flg : false
             };
-                },
-                methods: {
-                    // 함수(메소드)
-                    // 상세내용 flag function
-                    fnBox1Flg : function(){
-                        let self = this;
-                        self.box1Flg = true;
-                        self.box2Flg = false;
-                        self.box3Flg = false;
-                        self.box4Flg = false;
-                    },
-                    fnBox2Flg : function(){
-                        let self = this;
-                        self.box2Flg = true;
-                        self.box1Flg = false;
-                        self.box3Flg = false;
-                        self.box4Flg = false;
-                    },
-                    fnBox3Flg : function(){
-                        let self = this;
-                        self.box3Flg = true;
-                        self.box1Flg = false;
-                        self.box2Flg = false;
-                        self.box4Flg = false;
-                    },
-                    fnBox4Flg : function(){
-                        let self = this;
-                        self.box4Flg = true;
-                        self.box1Flg = false;
-                        self.box2Flg = false;
-                        self.box3Flg = false;
-                    },
-                    // 이스터 에그
-                    fnEasterEgg : function(){
-                        if(confirm("달걀을 찾았습니다!!")){
-                            location.href = "https://dhlottery.co.kr/common.do?method=main";
-                        }
-                    }
-                },
-                mounted() {
-                    // 처음 시작할 때 실행되는 부분
+        },
+        methods: {
+            // 함수(메소드)
+            // 상세내용 flag function
+            fnBox1Flg : function(){
+                let self = this;
+                self.box1Flg = true;
+                self.box2Flg = false;
+                self.box3Flg = false;
+                self.box4Flg = false;
+            },
+            fnBox2Flg : function(){
+                let self = this;
+                self.box2Flg = true;
+                self.box1Flg = false;
+                self.box3Flg = false;
+                self.box4Flg = false;
+            },
+            fnBox3Flg : function(){
+                let self = this;
+                self.box3Flg = true;
+                self.box1Flg = false;
+                self.box2Flg = false;
+                self.box4Flg = false;
+            },
+            fnBox4Flg : function(){
+                let self = this;
+                self.box4Flg = true;
+                self.box1Flg = false;
+                self.box2Flg = false;
+                self.box3Flg = false;
+            },
+            // 이스터 에그
+            fnEasterEgg : function(){
+                if(confirm("달걀을 찾았습니다!!")){
+                    location.href = "https://dhlottery.co.kr/common.do?method=main";
                 }
-            });
+            }
+        },
+        mounted() {
+            // 처음 시작할 때 실행되는 부분
+        }
+    });
 
-            app.mount('#app');
-    </script>
+    app.mount('#app');
+</script>

@@ -135,48 +135,48 @@
         pre {
             font-size: 17px;
         }
-      </style>
-    </head>
-    <body class="dark-java">
-        <!-- 배경음악 -->
-        <iframe src="media/GunsNRoses - Welcome to the Jungle - utoranking.com.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
-        <!-- 헤드부분 배너 이미지 -->
-        <div id="head">
-            <img src="media/eat-sleep-code-repeat.jpg">
-            <img src="media/eat-sleep-code-repeat.jpg">
-            <img src="media/eat-sleep-code-repeat.jpg">
-            <img src="media/eat-sleep-code-repeat.jpg">
-            <img src="media/eat-sleep-code-repeat.jpg">
-            <img src="media/eat-sleep-code-repeat.jpg">
-            <img src="media/eat-sleep-code-repeat.jpg">
-            <img src="media/eat-sleep-code-repeat.jpg">
-            <img src="media/eat-sleep-code-repeat.jpg">
-            <img src="media/eat-sleep-code-repeat.jpg">
-        </div>
-        <div id="container">
-            <!-- 사이드바 -->
-            <div id="sidebar">
-                <div class="s_box s_box1">
-                    <img src="media/life.jpg" width="200px">
-                    <h3>Ryu seungho</h3>    
-                    <p>먹고, 자고, 코딩만 합니다!</p>
-                </div>    
-                <div class="s_box s_box2">
-                        <a href="https://github.com/ljs1990-tj/html_ex1"><img src="media/git_icon1.png" id="git"></a>
-                        <a href="https://www.instagram.com/accounts/login/?source=logged_out_sem"><img src="media/insta_icon1.png" id="insta"></a>
-                        <a href="https://x.com/?lang=ko&mx=2"><img src="media/tweet_icon1.png" id="tweet"></a>
-                </div>
-                <div class="s_box s_box3">
-                    <a onclick="fnMode()"><img src="media/java3.png" style="width: 100px;" id="java"></a>
-                </div>
-                <!-- 현재 시간 -->
-                <div class="s_box s_box4">
-                    <div id="time"></div>
-                </div>
+    </style>
+</head>
+<body class="dark-java">
+    <!-- 배경음악 -->
+    <iframe src="media/GunsNRoses - Welcome to the Jungle - utoranking.com.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
+    <!-- 헤드부분 배너 이미지 -->
+    <div id="head">
+        <img src="media/eat-sleep-code-repeat.jpg">
+        <img src="media/eat-sleep-code-repeat.jpg">
+        <img src="media/eat-sleep-code-repeat.jpg">
+        <img src="media/eat-sleep-code-repeat.jpg">
+        <img src="media/eat-sleep-code-repeat.jpg">
+        <img src="media/eat-sleep-code-repeat.jpg">
+        <img src="media/eat-sleep-code-repeat.jpg">
+        <img src="media/eat-sleep-code-repeat.jpg">
+        <img src="media/eat-sleep-code-repeat.jpg">
+        <img src="media/eat-sleep-code-repeat.jpg">
+    </div>
+    <div id="container">
+        <!-- 사이드바 -->
+        <div id="sidebar">
+            <div class="s_box s_box1">
+                <img src="media/life.jpg" width="200px">
+                <h3>Ryu seungho</h3>    
+                <p>먹고, 자고, 코딩만 합니다!</p>
+            </div>    
+            <div class="s_box s_box2">
+                <a href="https://github.com/ljs1990-tj/html_ex1"><img src="media/git_icon1.png" id="git"></a>
+                <a href="https://www.instagram.com/accounts/login/?source=logged_out_sem"><img src="media/insta_icon1.png" id="insta"></a>
+                <a href="https://x.com/?lang=ko&mx=2"><img src="media/tweet_icon1.png" id="tweet"></a>
             </div>
-            <!-- 내용과 상세 내용은 vue 안에서 작성 -->
-            <div id="app">
-                <!-- 내용 -->
+            <div class="s_box s_box3">
+                <a onclick="fnMode()"><img src="media/java3.png" style="width: 100px;" id="java"></a>
+            </div>
+            <!-- 현재 시간 -->
+            <div class="s_box s_box4">
+                <div id="time"></div>
+            </div>
+        </div>
+        <!-- 내용과 상세 내용은 vue 안에서 작성 -->
+        <div id="app">
+            <!-- 내용 -->
             <div id="contents">
                 <section class="c_box c_box1" @click="fnBox1Flg()">
                     <h1>자기소개</h1>
@@ -331,56 +331,57 @@
                 <div>Mobile : +82 10 1234 5678</div>
                 <div>E-Mail : javamaster@naver.com</div>
             </div>      
-        </div>    
-    </body>
-    </html>
-    <script>
-        //  아이콘 이미지 변경
-        let img1 = document.querySelector("#git");
-            img1.addEventListener("mouseover", ()=>{
-                img1.src = "media/git_icon2.png";
-            });
-            img1.addEventListener("mouseout", ()=>{
-                img1.src = "media/git_icon1.png";
-            });
-        let img2 = document.querySelector("#insta");
-            img2.addEventListener("mouseover", ()=>{
-                img2.src = "media/insta_icon2.png";
-            });
-            img2.addEventListener("mouseout", ()=>{
-                img2.src = "media/insta_icon1.png";
-            });    
-        let img3 = document.querySelector("#tweet");
-            img3.addEventListener("mouseover", ()=>{
-                img3.src = "media/tweet_icon2.png";
-            });
-            img3.addEventListener("mouseout", ()=>{
-                img3.src = "media/tweet_icon1.png";
-            });
+        </div> 
+    </div>       
+</body>
+</html>
+<script>
+    //  아이콘 이미지 변경
+    let img1 = document.querySelector("#git");
+        img1.addEventListener("mouseover", ()=>{
+            img1.src = "media/git_icon2.png";
+        });
+        img1.addEventListener("mouseout", ()=>{
+            img1.src = "media/git_icon1.png";
+        });
+    let img2 = document.querySelector("#insta");
+        img2.addEventListener("mouseover", ()=>{
+            img2.src = "media/insta_icon2.png";
+        });
+        img2.addEventListener("mouseout", ()=>{
+            img2.src = "media/insta_icon1.png";
+        });    
+    let img3 = document.querySelector("#tweet");
+        img3.addEventListener("mouseover", ()=>{
+            img3.src = "media/tweet_icon2.png";
+        });
+        img3.addEventListener("mouseout", ()=>{
+            img3.src = "media/tweet_icon1.png";
+        });
 
-        // 화면 모드 변경
-        function fnMode(){
-            let body = document.body;
-            body.classList.toggle('dark-java');
-            body.classList.toggle('light-java');  
+    // 화면 모드 변경
+    function fnMode(){
+        let body = document.body;
+        body.classList.toggle('dark-java');
+        body.classList.toggle('light-java');  
 
-            var img = document.getElementById('java');
-            if (img.src.endsWith('media/java3.png')) {
-                img.src = 'media/java2.png';
-            } else {
-                img.src = 'media/java3.png';
-            }
+        var img = document.getElementById('java');
+        if (img.src.endsWith('media/java3.png')) {
+            img.src = 'media/java2.png';
+        } else {
+            img.src = 'media/java3.png';
         }
+    }
 
-        // 현재시간
-        setInterval(()=>{
-            let datetime = new Date();
-            let getTime = datetime.getHours() + " : " + datetime.getMinutes() + " : " + datetime.getSeconds();
-            let obj = document.querySelector("#time");
-            obj.innerHTML = getTime;
-        }, 1000)
-        // vue.js 부분
-        const app = Vue.createApp({
+    // 현재시간
+    setInterval(()=>{
+        let datetime = new Date();
+        let getTime = datetime.getHours() + " : " + datetime.getMinutes() + " : " + datetime.getSeconds();
+        let obj = document.querySelector("#time");
+        obj.innerHTML = getTime;
+    }, 1000)
+    // vue.js 부분
+    const app = Vue.createApp({
         data() {
             return {
                 // 변수
@@ -389,49 +390,49 @@
                 box3Flg : false,
                 box4Flg : false
             };
-                },
-                methods: {
-                    // 함수(메소드)
-                    // 상세내용 flag function
-                    fnBox1Flg : function(){
-                        let self = this;
-                        self.box1Flg = true;
-                        self.box2Flg = false;
-                        self.box3Flg = false;
-                        self.box4Flg = false;
-                    },
-                    fnBox2Flg : function(){
-                        let self = this;
-                        self.box2Flg = true;
-                        self.box1Flg = false;
-                        self.box3Flg = false;
-                        self.box4Flg = false;
-                    },
-                    fnBox3Flg : function(){
-                        let self = this;
-                        self.box3Flg = true;
-                        self.box1Flg = false;
-                        self.box2Flg = false;
-                        self.box4Flg = false;
-                    },
-                    fnBox4Flg : function(){
-                        let self = this;
-                        self.box4Flg = true;
-                        self.box1Flg = false;
-                        self.box2Flg = false;
-                        self.box3Flg = false;
-                    },
-                    // 이스터 에그
-                    fnEasterEgg : function(){
-                        if(confirm("달걀을 찾았습니다!!")){
-                            location.href = "https://dhlottery.co.kr/common.do?method=main";
-                        }
-                    }
-                },
-                mounted() {
-                    // 처음 시작할 때 실행되는 부분
+        },
+        methods: {
+            // 함수(메소드)
+            // 상세내용 flag function
+            fnBox1Flg : function(){
+                let self = this;
+                self.box1Flg = true;
+                self.box2Flg = false;
+                self.box3Flg = false;
+                self.box4Flg = false;
+            },
+            fnBox2Flg : function(){
+                let self = this;
+                self.box2Flg = true;
+                self.box1Flg = false;
+                self.box3Flg = false;
+                self.box4Flg = false;
+            },
+            fnBox3Flg : function(){
+                let self = this;
+                self.box3Flg = true;
+                self.box1Flg = false;
+                self.box2Flg = false;
+                self.box4Flg = false;
+            },
+            fnBox4Flg : function(){
+                let self = this;
+                self.box4Flg = true;
+                self.box1Flg = false;
+                self.box2Flg = false;
+                self.box3Flg = false;
+            },
+            // 이스터 에그
+            fnEasterEgg : function(){
+                if(confirm("달걀을 찾았습니다!!")){
+                    location.href = "https://dhlottery.co.kr/common.do?method=main";
                 }
-            });
+            }
+        },
+        mounted() {
+            // 처음 시작할 때 실행되는 부분
+        }
+    });
 
-            app.mount('#app');
-    </script>
+    app.mount('#app');
+</script>
